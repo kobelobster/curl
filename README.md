@@ -26,10 +26,10 @@ $curl->get('http://tzfrs.de/', array(
 
 ```php
 $curl = new SimpleCurl();
-$curl->setUserAgent($userAgent)
-    ->setReferrer($referer')
+$curl->setFollowlocation()
+    ->setMaxredirs(15)
     ->get('http://tzfrs.de');
-if ($curl->hasError()) {
+if ($curl->hasError) {
     print $curl->errorNo .': '. $curl->error;
 }
 else {

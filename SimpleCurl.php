@@ -1,6 +1,4 @@
 <?php
-namespace ActiveValue\Tzaferis\Helper;
-
 /**
  * SimpleCurl
  * @author Theo Tzaferis
@@ -278,20 +276,26 @@ class SimpleCurl
     /**
      * The maximum amount of HTTP redirections to follow. Use this option alongside CURLOPT_FOLLOWLOCATION.
      * @param int $maxredirs
+     *
+     * @return $this
      */
     public function setMaxredirs($maxredirs)
     {
-        $this->setOpt(CURLOPT_MAXREDIRS, $maxredirs);
-        $this->setFollowlocation();
+        $this->setOpt(CURLOPT_MAXREDIRS, $maxredirs)
+            ->setFollowlocation();
+        return $this;
     }
 
     /**
      * The contents of the "Referer: " header to be used in a HTTP request.
      * @param string $referer
+     *
+     * @return $this Return itself
      */
     public function setReferer($referer)
     {
         $this->setOpt(CURLOPT_REFERER, $referer);
+        return $this;
     }
 
     /**
@@ -303,10 +307,13 @@ class SimpleCurl
      * Support for value 1 removed in cURL 7.28.1
      *
      * @param $sslVerifyhost
+     *
+     * @return $this Return itself
      */
     public function setSSLVerifyhost($sslVerifyhost)
     {
         $this->setOpt(CURLOPT_SSL_VERIFYHOST, $sslVerifyhost);
+        return $this;
     }
 
     /**
@@ -316,39 +323,49 @@ class SimpleCurl
      *
      * true by default as of cURL 7.10. Default bundle installed as of cURL 7.10.
      * @param bool $sslVerifypeer
+     *
+     * @return $this Return itself
      */
     public function setSSLVerifypeer($sslVerifypeer = true)
     {
         $this->setOpt(CURLOPT_SSL_VERIFYPEER, $sslVerifypeer);
+        return $this;
     }
 
     /**
      * The SSL version (2 or 3) to use. By default PHP will try to determine this itself,
      * although in some cases this must be set manually.
      *
+     * @return $this Return itself
      */
     public function setSSLversion()
     {
         $this->setOpt(CURLOPT_SSLVERSION, 4);
+        return $this;
     }
 
     /**
      * The contents of the "User-Agent: " header to be used in a HTTP request.
      * @param string $useragent
+     *
+     * @return $this Return itself
      */
     public function setUseragent($useragent)
     {
         $this->setOpt(CURLOPT_USERAGENT, $useragent);
+        return $this;
     }
 
     /**
      * Sets CURLOPT_FORBID_REUSE
      * true to force the connection to explicitly close when it has finished processing, and not be pooled for reuse.
      * @param bool $curloptForbidReuse
+     * @return $this
      */
     public function setForbidReuse($curloptForbidReuse = true)
     {
         $this->setOpt(CURLOPT_FORBID_REUSE, $curloptForbidReuse);
+        return $this;
     }
 
 
