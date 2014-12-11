@@ -65,13 +65,17 @@ class SimpleCurl
      * Performing a getRequest to the given URL
      *
      * @param $url string $url The URL to send the request to
+     * @param null|array $data The data that should be appeneded as get parameters to the url
      * @param bool $withUrlEncoding
      * @return array
      */
-    public function get($url, $withUrlEncoding = false)
+    public function get($url, $data = null, $withUrlEncoding = false)
     {
         if ($withUrlEncoding) {
             $url = $this->curlEscape($url);
+        }
+        if ($data !== null) {
+            $url .= http_build_query($data, null, '&');
         }
         return $this->setOpt(CURLOPT_URL, $url)
             ->exec();
