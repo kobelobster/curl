@@ -75,7 +75,7 @@ class SimpleCurl
             $url = $this->curlEscape($url);
         }
         if ($data !== null) {
-            $url .= http_build_query($data, null, '&');
+            $url .= '?'. http_build_query($data, null, '&');
         }
         return $this->setOpt(CURLOPT_URL, $url)
             ->exec();
