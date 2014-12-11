@@ -410,7 +410,7 @@ class SimpleCurl
         $this->error                = curl_error($this->curl);
         $this->errorNo              = curl_errno($this->curl);
         $this->responseHeader       = $this->getHeaderFromResponse();
-        $returnArray                = [];
+        $returnArray                = array();
         $returnArray['response']    = $this->response;
         $returnArray['info']        = $this->info;
         if (!$this->response) {
