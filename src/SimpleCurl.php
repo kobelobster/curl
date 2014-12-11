@@ -1,4 +1,5 @@
 <?php
+namespace tzfrs\Util;
 /**
  * SimpleCurl
  * @author Theo Tzaferis
