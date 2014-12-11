@@ -1,0 +1,21 @@
+{
+    "name": "tzfrs/SimpleCurl",
+    "type" : "library",
+    "description": "A simple object-oriented wrapper of the PHP cURL extension.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Theo Tzaferis",
+            "email": "tzaferis.theo@gmail.com",
+            "homepage" : "http://tzfrs.de"
+        }
+    ],
+    "require" : {
+        "php" : ">=5.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "tzfrs\\": "src/"
+        }
+    }
+}
