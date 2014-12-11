@@ -1,5 +1,5 @@
 {
-    "name": "tzfrs/SimpleCurl",
+    "name": "tzfrs/simple-curl",
     "type" : "library",
     "description": "A simple object-oriented wrapper of the PHP cURL extension.",
     "license": "MIT",
