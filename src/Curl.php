@@ -12,7 +12,7 @@ class Curl
      * Variable used for the cURL object creation
      * @var resource $curl
      */
-    private $curl;
+    protected $curl;
     /**
      * The response from the curl request gets saved into this variable
      * @var mixed $curlResponse
