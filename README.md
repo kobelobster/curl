@@ -1,4 +1,4 @@
-SimpleCurl
+Curl
 ==========
 A simple object-oriented wrapper of the PHP cURL extension.
 
@@ -9,7 +9,7 @@ Install via [composer](https://getcomposer.org):
 ```javascript
 {
     "require": {
-        "tzfrs/simple-curl": "dev-master"
+        "tzfrs/curl": "dev-master"
     }
 }
 ```
@@ -21,15 +21,15 @@ Run `composer install`.
 #### Perform a simple get request
 
 ```php
-require 'SimpleCurl.php';
-$curl = new SimpleCurl();
+require 'Curl.php';
+$curl = new Curl;
 $curl->get('http://tzfrs.de');
 ```
 
 #### Perform a get request with parameters
 
 ```php
-$curl = new SimpleCurl();
+$curl = new Curl;
 $curl->get('http://tzfrs.de/', array(
     's' => 'searchterm',
 ));
@@ -38,7 +38,7 @@ $curl->get('http://tzfrs.de/', array(
 #### Setting some more options.
 
 ```php
-$curl = new SimpleCurl();
+$curl = new Curl;
 $curl->setFollowlocation()
     ->setMaxredirs(15)
     ->get('http://tzfrs.de');

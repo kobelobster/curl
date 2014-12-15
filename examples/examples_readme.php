@@ -1,20 +1,20 @@
 <?php
-require __DIR__ . '/../src/SimpleCurl.php';
+require __DIR__ . '/../src/Curl.php';
 
-use tzfrs\Util\SimpleCurl as SimpleCurl;
+use tzfrs\Util\Curl as Curl;
 
 // Perform a simple get request
-$curl = new SimpleCurl;
+$curl = new Curl;
 $curl->get('http://tzfrs.de');
 
 // Perform a get request with parameters
-$curl = new SimpleCurl;
+$curl = new Curl;
 $curl->get('http://tzfrs.de/', array(
     's' => 'searchterm',
 ));
 
 // Setting some more options.
-$curl = new SimpleCurl;
+$curl = new Curl;
 $curl->setFollowlocation()
     ->setMaxredirs(15)
     ->get('http://tzfrs.de');

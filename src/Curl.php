@@ -1,12 +1,12 @@
 <?php
 namespace tzfrs\Util;
 /**
- * SimpleCurl
+ * Curl
  * @author Theo Tzaferis
  *
  * This class is used to handle curl operations.
  */
-class SimpleCurl
+class Curl
 {
     /**
      * Variable used for the cURL object creation
