@@ -77,7 +77,9 @@ class Curl
         if ($data !== null) {
             $url .= '?'. http_build_query($data, null, '&');
         }
-        return $this->setOpt(CURLOPT_URL, $url)
+
+        return $this->setOpt(CURLOPT_CUSTOMREQUEST, 'GET')
+            ->setOpt(CURLOPT_URL, $url)
             ->exec();
     }
 
@@ -97,7 +99,9 @@ class Curl
             $url = $this->curlEscape($url);
         }
         $this->setOpt(CURLOPT_URL, $url)
-            ->setOpt(CURLOPT_POST, true);
+            ->setOpt(CURLOPT_POST, true)
+            ->setOpt(CURLOPT_CUSTOMREQUEST, 'POST');
+
 
         if ($data !== null) {
             $this->setOpt(CURLOPT_POSTFIELDS, $data);
@@ -121,7 +125,7 @@ class Curl
         }
         $this->setOpt(CURLOPT_URL, $url)
             ->setOpt(CURLOPT_CUSTOMREQUEST, "PUT");
-        if ($data!==null) {
+        if ($data !== null) {
             $this->setOpt(CURLOPT_POSTFIELDS, $data);
         }
         return $this->exec();
@@ -136,6 +140,7 @@ class Curl
             ->setOpt(CURLOPT_PUT, true)
             ->setOpt(CURLOPT_INFILE, $inFile)
             ->setOpt(CURLOPT_INFILESIZE, $inFilesize)
+            ->setOpt(CURLOPT_CUSTOMREQUEST, "PUT")
             ->exec($returnResult);
     }
 
