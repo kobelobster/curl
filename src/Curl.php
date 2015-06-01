@@ -422,6 +422,7 @@ class Curl
         if (!$this->response) {
             $this->hasError         = true;
         }
+        curl_close($this->curl);
         return $this->response;
     }
 }
